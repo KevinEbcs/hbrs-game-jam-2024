@@ -19,6 +19,13 @@ public class PlayerMovement : MonoBehaviour
     public InputActionReference move;
     public InputActionReference jump;
 
+    private Vector3 respawnPosition;
+
+    private void Start()
+    {
+        respawnPosition = this.transform.position;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -58,5 +65,15 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("Jumps refilled");
             availableJumps = maxJumps;
         }
+    }
+
+    public void respawn()
+    {
+        rb.MovePosition(respawnPosition);
+    }
+
+    public void setRespawnPosition(Vector3 newPosition)
+    {
+        respawnPosition = newPosition;
     }
 }
