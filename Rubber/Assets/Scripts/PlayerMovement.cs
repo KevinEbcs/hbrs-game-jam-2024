@@ -70,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
     public void respawn()
     {
         rb.MovePosition(respawnPosition);
+        rb.velocity=Vector3.zero;
     }
 
     public void setRespawnPosition(Vector3 newPosition)

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Transactions;
 using UnityEngine;
 
 public class RotateLever : MonoBehaviour
@@ -14,11 +16,20 @@ public class RotateLever : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.transform.position.x > -0.003)
+        
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Lever"))
         {
             door.openDoor();
         }
-        else
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Lever"))
         {
             door.closeDoor();
         }
