@@ -6,8 +6,9 @@ using UnityEngine;
 public class RopeManager : MonoBehaviour
 { 
     [SerializeField] private GameObject ropePrefab;
-
+    [SerializeField] private float distanceBetweenLinks;
     [SerializeField] private int ropeLinkNumber;
+    [SerializeField] private Rigidbody fixedPoint;
     
     private List<GameObject> rope = new List<GameObject>();
     
@@ -19,7 +20,7 @@ public class RopeManager : MonoBehaviour
         {
             GameObject currentRopeLink = Instantiate(ropePrefab, this.transform);
             currentRopeLink.transform.position += new Vector3(0, -(0.11f * i), 0);
-
+            
             if (i > 0)
             {
                 try
@@ -34,7 +35,8 @@ public class RopeManager : MonoBehaviour
             }
             else
             {
-                
+                FixedJoint _fixedJoint = currentRopeLink.AddComponent<FixedJoint>();
+                _fixedJoint.connectedBody = fixedPoint;
             }
             
             try
