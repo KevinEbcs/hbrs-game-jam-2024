@@ -223,3 +223,11 @@ Received Import Request.
 Start importing Assets/PlayerControls.inputactions using Guid(1e5c91749290908469e8dd938707e4d4) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '20fe89a2d427ee605a34d3dac71c2560') in 0.042907134 seconds
 Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 3
 
+========================================================================
+Received Import Request.
+  Time since last request: 395,234341 seconds.
+  path: Assets/Materials/Test_Material2.mat
+  artifactKey: Guid(264a2450d5390294bae8e2f8f66d4941) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/Test_Material2.mat using Guid(264a2450d5390294bae8e2f8f66d4941) Importer(815301076,1909f56bfc062723c751e8b465ee728b) (PreviewImporter) -> (artifact id: '93d1c34c07eee96171352d9b01a8a511') in 0.350819851 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
