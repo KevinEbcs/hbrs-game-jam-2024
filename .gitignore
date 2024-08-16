@@ -79,3 +79,12 @@ Temp
 Library
 Rubber/Logs/AssetImportWorker0.log
 Rubber/Logs/AssetImportWorker1.log
+.log
+Rubber\Logs
+Rubber/Logs/shadercompiler-AssetImportWorker0-0.log
+Rubber/Logs/shadercompiler-AssetImportWorker1-0.log
+Rubber/Logs/shadercompiler-UnityShaderCompiler-0.log
+Rubber/Logs/shadercompiler-UnityShaderCompiler-1.log
+Rubber/Logs/shadercompiler-UnityShaderCompiler-2.log
+Rubber/Logs/shadercompiler-UnityShaderCompiler-3.log
+Rubber/Logs/AssetImportWorker1.log

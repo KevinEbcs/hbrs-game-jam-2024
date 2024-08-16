@@ -6,6 +6,8 @@ using UnityEngine;
 public class DoorButton : MonoBehaviour
 {
     public Door door;
+
+    public bool open;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +24,12 @@ public class DoorButton : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            if(open)
             door.openDoor();
+            else
+            {
+                door.closeDoor();
+            }
         }
     }
 }
