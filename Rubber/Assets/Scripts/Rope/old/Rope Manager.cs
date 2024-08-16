@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class RopeManager : MonoBehaviour
+public class old_RopeManager : MonoBehaviour
 { 
     [SerializeField] private GameObject ropePrefab;
     [SerializeField] private Vector3 distanceBetweenLinks;
