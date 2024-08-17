@@ -24,6 +24,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         respawnPosition = this.transform.position;
+        rb.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame

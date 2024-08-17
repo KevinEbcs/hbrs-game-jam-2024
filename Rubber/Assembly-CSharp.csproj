@@ -60,6 +60,9 @@
     <Compile Include="Assets\Scripts\DoorButton.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
     <Compile Include="Assets\Scripts\Rope\old\Rope Manager Line Renderer.cs" />
+    <None Include="Assets\KenneyDungeon\License.txt" />
+    <None Include="Assets\KenneyBrick\License.txt" />
+    <None Include="Assets\KenneyPlatformer\License.txt" />
     <Reference Include="UnityEngine">
       <HintPath>G:\Programme\Unity\2023.2.17f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
