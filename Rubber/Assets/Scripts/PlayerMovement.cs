@@ -89,8 +89,8 @@ public class PlayerMovement : MonoBehaviour
         if (availableJumps > 0)
         {
             rb.AddForce(0,jumpPower,0);
-            animator.SetTrigger("Jump");
-            animator.Play("Jump");
+            animator.SetBool("isJumping",true);
+            animator.Play("jump");
             availableJumps--;
         }
         Debug.Log("Jump"+availableJumps);
@@ -101,6 +101,8 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             Debug.Log("Jumps refilled");
+            animator.SetBool("isJumping", false);
+            animator.Play("Idle");
             availableJumps = maxJumps;
         }
     }
