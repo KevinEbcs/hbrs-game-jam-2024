@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public float jumpPower;
     public int maxJumps;
     private int availableJumps;
+    public Animator animator;
 
     float moveDirection;
 
@@ -32,6 +33,19 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         moveDirection = move.action.ReadValue<float>();
+        if (move.action.ReadValue<float>()==0)
+        {
+            animator.SetBool("IsWalking",false);
+        }
+        else
+        {
+            animator.SetBool("IsWalking",true);
+            if (move.action.ReadValue<float>() == 0)
+            {
+                
+            }
+        }
+        
     }
 
     private void FixedUpdate()
