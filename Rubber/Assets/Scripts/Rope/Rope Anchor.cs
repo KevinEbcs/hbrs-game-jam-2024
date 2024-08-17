@@ -27,7 +27,7 @@ public class RopeAnchor : MonoBehaviour
     private float currentFlightTimer;
     private float currentGrabCooldownTimer;
     private bool isGrabCooldown;
-    private bool isAttached;
+    public bool isAttached;
     
     
     // Start is called before the first frame update
@@ -55,7 +55,7 @@ public class RopeAnchor : MonoBehaviour
         
     }
 
-    private void ResetRope()
+    public void ResetRope()
     {
         if (!isAttached && Physics.Raycast(playerTransform.position, transform.position-playerTransform.position, 
                 (transform.position - playerTransform.position).magnitude, ~isPlayer))
@@ -97,7 +97,7 @@ public class RopeAnchor : MonoBehaviour
         ThrowArm();
     }
 
-    void ThrowArm()
+    public void ThrowArm()
     {
         if (isAttached)
         {

@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
+    public RopeAnchor rope;
 
     public float moveSpeed;
     public float jumpPower;
@@ -72,6 +73,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb.MovePosition(respawnPosition);
         rb.velocity=Vector3.zero;
+        rope.ThrowArm();
     }
 
     public void setRespawnPosition(Vector3 newPosition)
