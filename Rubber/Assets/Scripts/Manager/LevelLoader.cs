@@ -5,14 +5,16 @@ using UnityEngine.SceneManagement;
 
 namespace Manager
 {
-    public class LevelLoader : MonoBehaviour
+    public class LevelLoader : SingletonMonoBehaviour<LevelLoader>
     {
         [SerializeField] private GameObject crossfade;
         [SerializeField] private Animator transition;
         [SerializeField] private float transitionTime;
+        [SerializeField] private GameObject pauseMenu;
     
         private Animator _crossfadeAnim;
         private static GameObject _instance;
+        private GameObject _pauseMenu;
     
         // Start is called before the first frame update
         void Start()
@@ -34,6 +36,10 @@ namespace Manager
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
             transition.SetTrigger("Load");
+            if (scene.name != "Main_Menu")
+            {
+                _pauseMenu = Instantiate(pauseMenu, transform.position, transform.rotation);
+            }
         }
         
         public void LoadNextLevel(string sceneName, int transId = 0)
