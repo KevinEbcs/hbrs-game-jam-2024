@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JumpPowerUp : MonoBehaviour
+public class EndBox : MonoBehaviour
 {
     private PlayerMovement player;
+    
     // Start is called before the first frame update
     void Start()
     {
-       player = FindAnyObjectByType<PlayerMovement>();
+        player = FindAnyObjectByType<PlayerMovement>();
     }
 
     // Update is called once per frame
@@ -20,12 +21,10 @@ public class JumpPowerUp : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (player.keyFound)
         {
-            player.maxJumps++;
-            AudioSource audio = player.GetComponent<AudioSource>();
-            audio.Play();
-            this.gameObject.SetActive(false);
+            player.end = true;
+            player.End();
         }
     }
 }

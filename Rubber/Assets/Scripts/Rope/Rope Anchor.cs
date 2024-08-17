@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -28,7 +27,7 @@ public class RopeAnchor : MonoBehaviour
     private float currentGrabCooldownTimer;
     private bool isGrabCooldown;
     public bool isAttached;
-    public bool ropeAbility = false;
+    public bool ropeAbility = true;
     
     
     // Start is called before the first frame update
@@ -48,7 +47,7 @@ public class RopeAnchor : MonoBehaviour
         ManageGrabCooldown();
         
         
-        if (Mouse.current.leftButton.wasPressedThisFrame && ropeAbility)
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             ThrowArm();
         }

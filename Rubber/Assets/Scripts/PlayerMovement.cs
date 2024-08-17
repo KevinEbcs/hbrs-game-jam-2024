@@ -10,6 +10,12 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rb;
     public RopeAnchor rope;
 
+    public bool ropeAbility=false;
+    public bool keyFound = false;
+    public bool end;
+    public Transform endpoint;
+    public Door EndDoor;
+
     public float moveSpeed;
     public float jumpPower;
     public int maxJumps;
@@ -20,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
 
     public InputActionReference move;
     public InputActionReference jump;
+    public InputActionReference slingshot;
 
     private Vector3 respawnPosition;
     private bool look_left = true;
@@ -28,6 +35,8 @@ public class PlayerMovement : MonoBehaviour
     {
         respawnPosition = this.transform.position;
         rb.GetComponent<Rigidbody>();
+        slingshot.action.Enable();
+        slingshot.action.started += Slingshot;
     }
 
     // Update is called once per frame
@@ -65,7 +74,12 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsWalking",true);
             animator.Play("walk");
         }
-        
+
+        if (end)
+        {
+            float step = moveSpeed/3 * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, endpoint.position, step);
+        }
     }
 
     private void FixedUpdate()
@@ -81,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
     private void OnDisable()
     {
         jump.action.started -= Jump;
+        slingshot.action.started -= Slingshot;
     }
 
     public void Jump(InputAction.CallbackContext callbackContext)
@@ -94,6 +109,18 @@ public class PlayerMovement : MonoBehaviour
             availableJumps--;
         }
         Debug.Log("Jump"+availableJumps);
+    }
+
+    public void Slingshot(InputAction.CallbackContext callbackContext)
+    {
+        Debug.Log("Slingshot");
+        if (rope.isAttached && ropeAbility)
+        {
+            float power = 250;
+            rb.AddForce(power*(rope.transform.position-this.transform.position));
+            rope.ThrowArm();
+        }
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -117,5 +144,13 @@ public class PlayerMovement : MonoBehaviour
     public void setRespawnPosition(Vector3 newPosition)
     {
         respawnPosition = newPosition;
+    }
+
+    public void End()
+    {
+        rb.transform.Rotate(new Vector3(0,1,0),90);
+        move.action.Disable();
+        jump.action.Disable();
+        EndDoor.openDoor();
     }
 }
