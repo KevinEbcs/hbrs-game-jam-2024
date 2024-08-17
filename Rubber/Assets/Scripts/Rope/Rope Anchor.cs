@@ -23,7 +23,7 @@ public class RopeAnchor : MonoBehaviour
     private Transform playerTransform;
     private Rigidbody _rigidbody;
 
-    private bool isInFlight;
+    private bool isInFlight = false;
     private float currentFlightTimer;
     private float currentGrabCooldownTimer;
     private bool isGrabCooldown;
@@ -47,7 +47,7 @@ public class RopeAnchor : MonoBehaviour
         ManageGrabCooldown();
         
         
-        if (Mouse.current.leftButton.isPressed)
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             ThrowArm();
         }
@@ -120,7 +120,8 @@ public class RopeAnchor : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log(collision.gameObject.tag);
+        //Debug.Log(gameObject.layer);
+        //Debug.Log(collision.gameObject.tag);
         if (isInFlight && collision.gameObject.layer == 18)
         {
             Debug.Log("Attach");
