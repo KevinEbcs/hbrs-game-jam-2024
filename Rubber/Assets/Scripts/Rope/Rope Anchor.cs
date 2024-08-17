@@ -11,11 +11,13 @@ public class RopeAnchor : MonoBehaviour
     [SerializeField] private LineRenderer ropeVisual;
     
     [SerializeField] private LayerMask isPlayer;
+    //[SerializeField] private LayerMask isGrabable;
 
     [SerializeField] private InputActionReference throwArm;
 
     [SerializeField] private Crosshair _crosshair;
     [SerializeField] private float flightTime;
+    [SerializeField] private float grabCooldown = 1;
     [SerializeField] private float throwForceAmount;
 
     private Transform playerTransform;
@@ -23,7 +25,11 @@ public class RopeAnchor : MonoBehaviour
 
     private bool isInFlight;
     private float currentFlightTimer;
+    private float currentGrabCooldownTimer;
+    private bool isGrabCooldown;
     private bool isAttached;
+    
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +44,7 @@ public class RopeAnchor : MonoBehaviour
     {
         ResetRope();
         ManageFlight();
+        ManageGrabCooldown();
         
         
         if (Mouse.current.leftButton.isPressed)
@@ -72,6 +79,18 @@ public class RopeAnchor : MonoBehaviour
         }
     }
 
+    private void ManageGrabCooldown()
+    {
+        if (isGrabCooldown)
+        {
+            currentGrabCooldownTimer += Time.deltaTime;
+            if (currentGrabCooldownTimer >= grabCooldown)
+            {
+                isGrabCooldown = false;
+            }
+        }
+    }
+
     void ThrowArm(InputAction.CallbackContext callbackContext)
     {
         Debug.Log("CLick");
@@ -84,18 +103,25 @@ public class RopeAnchor : MonoBehaviour
         {
             _rigidbody.isKinematic = false;
             isAttached = false;
+            isGrabCooldown = true;
+            currentGrabCooldownTimer = 0;
             return;
         }
-        Vector3 throwDirection = (_crosshair.transform.position - transform.position).normalized;
-        _rigidbody.AddForce(throwForceAmount * throwDirection);
-        isInFlight = true;
-        currentFlightTimer = 0;
+
+        if (!isGrabCooldown)
+        {
+            Vector3 throwDirection = (_crosshair.transform.position - transform.position).normalized;
+            _rigidbody.AddForce(throwForceAmount * throwDirection);
+            isInFlight = true;
+            currentFlightTimer = 0;
+        }
+        
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log(collision.gameObject.tag);
-        if (isInFlight && collision.gameObject.tag == "IsGrabable")
+        if (isInFlight && collision.gameObject.layer == 18)
         {
             Debug.Log("Attach");
             _rigidbody.isKinematic = true;

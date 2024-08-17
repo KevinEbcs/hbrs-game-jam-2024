@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 8291361791338906817}
   - component: {fileID: 1299848963134649969}
   - component: {fileID: 5225715310992214846}
+  - component: {fileID: 6289373027219408532}
   m_Layer: 11
   m_Name: Rope Anchor
   m_TagString: Untagged
@@ -154,6 +155,9 @@ MonoBehaviour:
   isPlayer:
     serializedVersion: 2
     m_Bits: 2048
+  isGrabable:
+    serializedVersion: 2
+    m_Bits: 262144
   throwArm: {fileID: -489909305811815718, guid: 1e5c91749290908469e8dd938707e4d4, type: 3}
   _crosshair: {fileID: 0}
   flightTime: 20
@@ -264,3 +268,28 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!145 &6289373027219408532
+SpringJoint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4361094878503819527}
+  serializedVersion: 3
+  m_ConnectedBody: {fileID: 0}
+  m_ConnectedArticulationBody: {fileID: 0}
+  m_Anchor: {x: 0, y: 0.5, z: 0}
+  m_Axis: {x: 1, y: 0, z: 0}
+  m_AutoConfigureConnectedAnchor: 1
+  m_ConnectedAnchor: {x: 0, y: 0, z: 0}
+  m_Spring: 4.5
+  m_Damper: 0.2
+  m_MinDistance: 0
+  m_MaxDistance: 3
+  m_Tolerance: 0.025
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_EnableCollision: 0
+  m_EnablePreprocessing: 1
+  m_MassScale: 1
+  m_ConnectedMassScale: 1
