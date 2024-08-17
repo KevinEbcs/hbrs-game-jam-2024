@@ -61,21 +61,6 @@ public class PlayerMovement : MonoBehaviour
                 rb.transform.Rotate(Vector3.up, 180.0f, Space.Self);
                 look_left = false;
             }
-            //Camera.main.transform.Rotate(Vector3.right, -180.0f, Space.Self);
-            
-            /*if (rotating)
-            {
-                if (Vector3.Distance(transform.eulerAngles, new Vector3(180.0f, 0, 0)) > 0.1f)
-                {
-                    transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, new Vector3(180.0f, 0, 0),
-                        Time.deltaTime);
-                }
-                else
-                {
-                    transform.eulerAngles = new Vector3(180.0f, 0, 0);
-                    rotating = false;
-                }
-            }*/
 
             animator.SetBool("IsWalking",true);
             animator.Play("walk");
@@ -104,6 +89,8 @@ public class PlayerMovement : MonoBehaviour
         if (availableJumps > 0)
         {
             rb.AddForce(0,jumpPower,0);
+            animator.SetBool("isJumping",true);
+            animator.Play("jump");
             availableJumps--;
         }
         Debug.Log("Jump"+availableJumps);
@@ -114,6 +101,8 @@ public class PlayerMovement : MonoBehaviour
         if (other.CompareTag("Ground"))
         {
             Debug.Log("Jumps refilled");
+            animator.SetBool("isJumping", false);
+            animator.Play("Idle");
             availableJumps = maxJumps;
         }
     }
