@@ -96,6 +96,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/WarpTextExample.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshProFloatingText.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ShaderPropAnimator.cs" />
+    <Compile Include="Assets/Scripts/RopePowerUp.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
@@ -831,17 +832,8 @@
     <Reference Include="mscorlib">
       <HintPath>/home/alina/Unity/Hub/Editor/2023.2.17f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.PlasticSCM.Editor">
-      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
-      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem.ForUI">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.InputSystem.ForUI.dll</HintPath>
@@ -849,17 +841,8 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State">
-      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
-      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Shared.Editor">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll</HintPath>
@@ -867,32 +850,26 @@
     <Reference Include="Unity.VisualScripting.Core.Editor">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.Flow.Editor">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualStudio.Editor">
-      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Flow">
-      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
     </Reference>
     <Reference Include="Unity.EditorCoroutines.Editor">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.PlasticSCM.Editor">
+      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.Core">
-      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
+    <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
+      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
@@ -900,8 +877,38 @@
     <Reference Include="Unity.VisualScripting.State.Editor">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TestTools.CodeCoverage.Editor">
+      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State">
+      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
+      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro.Editor">
+      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualStudio.Editor">
+      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Flow">
+      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.Core">
+      <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>/home/alina/Dokumente/Uni/HBRS/2024_SoSe/GameJam_Rep/Rubber/Library/ScriptAssemblies/Unity.InputSystem.dll</HintPath>

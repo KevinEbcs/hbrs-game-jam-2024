@@ -30,20 +30,46 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
-        moveDirection = move.action.ReadValue<float>();
-        if (move.action.ReadValue<float>()==0)
+        moveDirection = move.action.ReadValue<float>(); // -1 -> links, 1 -> rechts
+        if (moveDirection==0)
         {
             animator.SetBool("IsWalking",false);
+            animator.Play("Idle");
         }
-        else
+        else if (moveDirection>=0)
         {
+            rb.transform.Rotate(Vector3.up, -180.0f, Space.Self);
             animator.SetBool("IsWalking",true);
-            if (move.action.ReadValue<float>() == 0)
+            animator.Play("walk");
+            /*if (move.action.ReadValue<float>() == 0)
             {
-                
-            }
+
+            }*/
+        }
+        else if (moveDirection <= 0)
+        {
+            rb.transform.Rotate(Vector3.up, 180.0f, Space.Self);
+            //Camera.main.transform.Rotate(Vector3.right, -180.0f, Space.Self);
+            
+            /*if (rotating)
+            {
+                if (Vector3.Distance(transform.eulerAngles, new Vector3(180.0f, 0, 0)) > 0.1f)
+                {
+                    transform.eulerAngles = Vector3.Lerp(transform.rotation.eulerAngles, new Vector3(180.0f, 0, 0),
+                        Time.deltaTime);
+                }
+                else
+                {
+                    transform.eulerAngles = new Vector3(180.0f, 0, 0);
+                    rotating = false;
+                }
+            }*/
+
+            animator.SetBool("IsWalking",true);
+            animator.Play("walk");
         }
         
     }
