@@ -14,6 +14,7 @@ public class PauseMenu : MonoBehaviour
     private LevelLoader _levelLoader;
 
     private Crosshair _cross;
+    private PlayerInput[] _playerInputs;
     private PlayerInput _player;
     private RopeAnchor _rope;
     
@@ -30,7 +31,14 @@ public class PauseMenu : MonoBehaviour
         }
         if (FindAnyObjectByType<PlayerInput>())
         {
-            _player = FindAnyObjectByType<PlayerInput>();   
+            _playerInputs = FindObjectsByType<PlayerInput>(FindObjectsSortMode.None);
+            foreach (var input in _playerInputs)
+            {
+                if (input != gameObject.GetComponent<PlayerInput>())
+                {
+                    _player = input;
+                }
+            }
         }
         if (FindAnyObjectByType<RopeAnchor>())
         {
@@ -52,7 +60,7 @@ public class PauseMenu : MonoBehaviour
 
     private void Pause(InputAction.CallbackContext callbackContext)
     {
-        Debug.Log("pause");
+        Debug.Log("Escape");
         if (_pauseCanvas.blocksRaycasts)
         {
             _pauseCanvas.blocksRaycasts = false;
