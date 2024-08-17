@@ -28,6 +28,7 @@ public class RopeAnchor : MonoBehaviour
     private float currentGrabCooldownTimer;
     private bool isGrabCooldown;
     public bool isAttached;
+    public bool ropeAbility = false;
     
     
     // Start is called before the first frame update
@@ -47,7 +48,7 @@ public class RopeAnchor : MonoBehaviour
         ManageGrabCooldown();
         
         
-        if (Mouse.current.leftButton.wasPressedThisFrame)
+        if (Mouse.current.leftButton.wasPressedThisFrame && ropeAbility)
         {
             ThrowArm();
         }
