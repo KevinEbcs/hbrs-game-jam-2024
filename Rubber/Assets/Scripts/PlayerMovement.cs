@@ -22,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public InputActionReference jump;
 
     private Vector3 respawnPosition;
+    private bool look_left = true;
 
     private void Start()
     {
@@ -39,9 +40,13 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsWalking",false);
             animator.Play("Idle");
         }
-        else if (moveDirection>=0)
+        else if (moveDirection <= 0)
         {
-            rb.transform.Rotate(Vector3.up, -180.0f, Space.Self);
+            if (!look_left)
+            {
+                rb.transform.Rotate(Vector3.up, -180.0f, Space.Self);
+                look_left = true;
+            }
             animator.SetBool("IsWalking",true);
             animator.Play("walk");
             /*if (move.action.ReadValue<float>() == 0)
@@ -49,9 +54,13 @@ public class PlayerMovement : MonoBehaviour
 
             }*/
         }
-        else if (moveDirection <= 0)
+        else if (moveDirection >= 0)
         {
-            rb.transform.Rotate(Vector3.up, 180.0f, Space.Self);
+            if (look_left)
+            {
+                rb.transform.Rotate(Vector3.up, 180.0f, Space.Self);
+                look_left = false;
+            }
             //Camera.main.transform.Rotate(Vector3.right, -180.0f, Space.Self);
             
             /*if (rotating)
