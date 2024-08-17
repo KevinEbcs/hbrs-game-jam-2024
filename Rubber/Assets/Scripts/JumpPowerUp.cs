@@ -6,10 +6,13 @@ using UnityEngine;
 public class JumpPowerUp : MonoBehaviour
 {
     private PlayerMovement player;
+
+    private TextHandler text;
     // Start is called before the first frame update
     void Start()
     {
        player = FindAnyObjectByType<PlayerMovement>();
+       text = FindAnyObjectByType<TextHandler>();
     }
 
     // Update is called once per frame
@@ -25,6 +28,7 @@ public class JumpPowerUp : MonoBehaviour
             player.maxJumps++;
             AudioSource audio = player.GetComponent<AudioSource>();
             audio.Play();
+            text.jumpMessage();
             this.gameObject.SetActive(false);
         }
     }
