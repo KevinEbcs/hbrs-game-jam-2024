@@ -12,7 +12,7 @@ namespace Menus
 
         public void Start()
         {
-            _levelLoader = levelLoaderObj.GetComponent<LevelLoader>();
+            _levelLoader = LevelLoader.GetInstance();
         }
         
         // Quit Game
